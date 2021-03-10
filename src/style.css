@@ -1,0 +1,15 @@
+#section1{display: block}
+#section2{display: none}
+#section3{display: none}
+
+#section1 {text-align: center;}
+
+.contain{
+    color: white;
+}
+
+body {
+    background-image: url(./images/background.gif);
+    background-size: cover;
+    height: 100vh;
+}
