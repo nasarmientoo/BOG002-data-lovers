@@ -10,7 +10,8 @@ let section3 = document.getElementById('section3');
 document.getElementById('pokebola1').addEventListener('click',ContinueSection2);
 
 function Ocultar(){
-    section1.style.display = 'none'
+ 
+   section1.style.display = 'none'
     section2.style.display = 'none'
     section3.style.display = 'none'
 }

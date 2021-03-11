@@ -3,9 +3,29 @@
 #section3{display: none}
 
 #section1 {text-align: center;}
+#section2 {text-align: center;}
+#section3 {text-align: center;}
+
 
 body {
     background-image: url(./images/background.gif);
     background-size: cover;
     height: 100vh;
+}
+
+#saludo {
+    margin: auto;
+    width: 1200px;
+}
+
+#pokebola1 {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+}
+
+#logo {
+    margin: auto;
+    width: 450px;
+    height: 200px;
 }
