@@ -1,11 +1,8 @@
 #section1{display: block}
 #section2{display: none}
-#section3{display: none}
 
 #section1 {text-align: center;}
 #section2 {text-align: center;}
-#section3 {text-align: center;}
-
 
 body {
     background-image: url(./images/background.gif);
@@ -15,17 +12,22 @@ body {
 
 #saludo {
     margin: auto;
-    width: 1200px;
+    width: 1000px;
 }
 
 #pokebola1 {
     margin: auto;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 }
 
-#logo {
+.logo {
     margin: auto;
-    width: 450px;
-    height: 200px;
+    width: 350px;
+    height: 150px;
+}
+
+[class^='icon-']{
+    width: 60px;
+    height: 60px;
 }

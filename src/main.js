@@ -1,19 +1,29 @@
 import { example } from './data.js';
-// import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+
+function cargarPokemones(){
+    fetch("./data/pokemon/pokemon.json")
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            appendData(data);
+        })
+        .catch(function(err){
+            console.log(err);
+        });
+}
+
+cargarPokemones();
 
 let section1 = document.getElementById('section1');
 let section2 = document.getElementById('section2');
-let section3 = document.getElementById('section3');
 
 document.getElementById('pokebola1').addEventListener('click',ContinueSection2);
 
 function Ocultar(){
- 
-   section1.style.display = 'none'
+    section1.style.display = 'none'
     section2.style.display = 'none'
-    section3.style.display = 'none'
 }
 
 function ContinueSection2(){
@@ -21,7 +31,10 @@ function ContinueSection2(){
     section2.style.display = 'block'
 }
 
-function ContinueSection3(){
-    Ocultar()
-    section3.style.display = 'block'
+function appendData(data){
+    let container = document.getElementById('data');
+    for (var i=0; i<data.length; i++){
+        let div = document.createElement("div");
+        div.innerHTML = 'Name:'+ data
+    }
 }
