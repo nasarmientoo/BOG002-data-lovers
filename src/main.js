@@ -1,40 +1,43 @@
 import { example } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-function cargarPokemones(){
-    fetch("./data/pokemon/pokemon.json")
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            appendData(data);
-        })
-        .catch(function(err){
-            console.log(err);
-        });
-}
-
-cargarPokemones();
-
 let section1 = document.getElementById('section1');
 let section2 = document.getElementById('section2');
+let container = document.getElementById('pocket_Container')
 
-document.getElementById('pokebola1').addEventListener('click',ContinueSection2);
+document.getElementById('pokebola1').addEventListener('click',() => Continue(section2));
 
 function Ocultar(){
     section1.style.display = 'none'
     section2.style.display = 'none'
 }
 
-function ContinueSection2(){
+function Continue(section){
     Ocultar()
-    section2.style.display = 'block'
+    section.style.display = 'block'
 }
 
 function appendData(data){
-    let container = document.getElementById('data');
-    for (var i=0; i<data.length; i++){
-        let div = document.createElement("div");
-        div.innerHTML = 'Name:'+ data
+    for (let i = 0; i < data.pokemon.length; i++) {     
+        container.innerHTML += 
+            `<div class="card">
+                <div class= "border-small">
+                    <h2 class="poke-Number">N.° ${data.pokemon[i].num} </h2>
+                    <img class="img-container" src=${data.pokemon[i].img}><br>
+                    <p> ${data.pokemon[i].name} </p> 
+                    <p class="description"> ${data.pokemon[i].about} </p>
+                </div>
+            </div>`
     }
 }
+
+fetch("./data/pokemon/pokemon.json")
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+           appendData(data);
+        })
+        .catch(function(error){
+            console.log(error);
+        });
