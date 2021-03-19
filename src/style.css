@@ -65,26 +65,35 @@ body {
 }
 
 .searching {
-    vertical-align: middle;
-    white-space: nowrap;
-    position: relative;
-}
-
-.searching input.search {
-    width: 550px;
-    height: 50px;
-    border-radius: 10px;
+    width: 500px;
+    height: 20px;
     border: 3px solid black;
-    margin: 10px;
-    font-size: 15pt;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    margin: 0 auto;
+    text-align: center
 }
 
-.searching .icon-lupa {
-    top: 50%;
-    margin-right: 17px;
-    margin-top: 17px;
-    color: black;
+.searching input.icon-lupa{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    outline: none;
 }
+
+.searching input.text {
+    flex: 1;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    padding-left: 10px;
+}
+
 
 .icon-menu {
     float: left;
