@@ -7,6 +7,7 @@
 body {
     background-image: url(./images/background.gif);
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
 }
 
@@ -44,6 +45,19 @@ body {
     }
 }
 
+.section2{
+    padding: 0;
+}
+
+.top-header{
+    position: sticky;
+    top: 0;
+}
+
+.content > div {
+    height: 100px;
+    }
+
 .logo {
     margin: auto;
     width: 350px;
@@ -80,6 +94,7 @@ body {
 .icon-pokebola {
     float: right;
     margin: 10px;
+    cursor: pointer;
 }
 
 .icon-info {
