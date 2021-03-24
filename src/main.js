@@ -32,7 +32,7 @@ function appendData(data){
         container.innerHTML += 
             `<div class="card">
                 <div class= "border-small">
-                    <h2 class="poke-Number">N.° ${data.pokemon[i].num}</h2>          
+                    <h2 class="poke-Number">N.° ${data.pokemon[i].num} </h2>      
                     <img class="img-container" src=${data.pokemon[i].img}><br>
                     <p> ${data.pokemon[i].name} </p> 
                     <p class="description"> ${data.pokemon[i].about} </p>
