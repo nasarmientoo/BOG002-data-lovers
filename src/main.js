@@ -30,14 +30,21 @@ function Continue(section){
 function appendData(data){
     for (let i = 0; i < data.pokemon.length; i++) {     
         container.innerHTML += 
-            `<div class="card">
-                <div class= "border-small">
-                    <h2 class="poke-Number">N.° ${data.pokemon[i].num} </h2>      
-                    <img class="img-container" src=${data.pokemon[i].img}><br>
-                    <p> ${data.pokemon[i].name} </p> 
-                    <p class="description"> ${data.pokemon[i].about} </p>
-                </div>
-            </div>`
+        `<div class="card">
+        <div class= "border-small">
+            <h2 class="poke-Number">N.° ${data.pokemon[i].num}</h2>
+            <div class="clasifics">
+            <p class="poke-rarity">
+            <img class="icon-rarity" src="images/icons/circled-r-48.png" <br> ${data.pokemon[i]["pokemon-rarity"]}</p>
+            <p class="generation" >
+            <img class="icon-generation" src="images/icons/circled-g-48.png"  <br> ${data.pokemon[i].generation.name} </p>
+            </div>
+            <p class="pokemon-type"> ${data.pokemon[i].type}</p>
+            <img class="img-container" src=${data.pokemon[i].img}><br>
+            <p class="poke-name"> ${data.pokemon[i].name} </p> 
+            <p class="description"> ${data.pokemon[i].about} </p>
+        </div>
+    </div>`
     }
 }
 // <img class ="icon-rarity" src=${rarityIcon()}></img>
