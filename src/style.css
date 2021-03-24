@@ -9,6 +9,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
+    overflow-y: hidden;
 }
 
 #saludo {
@@ -35,12 +36,13 @@ body {
 }
 
 .top-header{
-    position: sticky;
     top: 0;
+    height: 25vh;
 }
 
 .content{
     overflow-y: scroll;
+    height: 75vh;
 }
 
 .logo {
@@ -111,15 +113,66 @@ body {
 
 .poke-Number{
     margin: auto;
-    text-align: left;
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+}
+
+.clasifics {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 3px;
+    box-sizing: border-box;
+    margin: 10px;
+    height: 50px;
+    width: 270px;
+}
+
+.generation {
+    float: left;
+    padding-left: 35px;
+    font-size: 17px;
+    margin: 5px auto;
+    font-family: 'Fira Code', monospace;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.poke-rarity {
+    float: right;
+    padding-right: 35px;
+    font-size: 17px;
+    margin: 5px auto;
+    font-family: 'Fira Code', monospace;
+    
+}
+
+.icon-generation {
+    width: 25px;
+    height: 25px;
+}
+
+.icon-rarity {
+    width: 25px;
+    height: 25px;
+}
+
+.pokemon-type {
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgba(188, 141, 250, 0.671);
+    border-radius: 20px;
+    margin: 1px auto;
+    width: 110px;
+    height: 28px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 17px;
 }
 
 .card {
     padding: 10px;
-    margin: 10px;
+    margin: 40px 20px;
     text-align: center;
-    width: 288px;
-    height: 371px;
+    width: 320px;
+    height: 491px;
     background: #ffffff;
     border: 2px solid #000000;
     box-sizing: border-box;
@@ -139,25 +192,36 @@ body {
 }
 
 .border-small {
-    height: 350px;
+    height: 465px;
     border: 2px solid #000000;
     box-sizing: border-box;
     border-radius: 7px;
 }
 
 .description {
-    padding: 2px;
+    padding: 5px;
     margin: auto;
-    width: 255px;
-    height: 117px;
+    width: 265px;
+    height: 127px;
     border: 2px solid black;
     box-sizing: border-box;
     border-radius: 10px;
     text-align: center;
+    margin: 12px auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 11.6px;
+}
+
+.poke-name {
+    background-color: rgb(211, 211, 202);
+    margin: 1px auto;
+    height: 24px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
 }
 
 .img-container {
-    margin-top: 20px;
-    height: 120px;
-    width: 120px;
+    margin-top: 2px;
+    height: 150px;
+    width: 150px;
 }

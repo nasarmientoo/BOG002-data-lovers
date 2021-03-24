@@ -9,32 +9,41 @@ document.getElementById('pokebola1').addEventListener('click',() => Continue(sec
 document.getElementById('icon-pokebola').addEventListener('click',() => Continue(section1));
 
 
-function Ocultar(){
+function Hide(){
     section1.style.display = 'none'
     section2.style.display = 'none'
 }
 
 function Continue(section){
-    Ocultar()
+    Hide()
     section.style.display = 'block'
 }
 
-function Mayuscula(x){
+function Capital(x){
     return x[0].toUpperCase() + x.substring(1);
 }
 
-function appendData(data){
+function AppendData(data){
+    let contenedor = ""
     for (let i = 0; i < data.pokemon.length; i++) {     
-        container.innerHTML += 
-            `<div class="card">
-                <div class= "border-small">
-                    <h2 class="poke-Number">N.° ${data.pokemon[i].num} </h2>      
-                    <img class="img-container" src=${data.pokemon[i].img}><br>
-                    <p> ${Mayuscula(data.pokemon[i].name)} </p> 
-                    <p class="description"> ${data.pokemon[i].about} </p>
+        contenedor += 
+        `<div class="card">
+            <div class= "border-small">
+                <h2 class="poke-Number">N.° ${data.pokemon[i].num}</h2>
+                <div class="clasifics">
+                    <p class="poke-rarity">
+                    <img class="icon-rarity" src="images/icons/circled-r-48.png" <br> ${Capital(data.pokemon[i]["pokemon-rarity"])}</p>
+                    <p class="generation" >
+                    <img class="icon-generation" src="images/icons/circled-g-48.png"  <br> ${Capital(data.pokemon[i].generation.name)} </p>
                 </div>
-            </div>`
+                <p class="pokemon-type"> ${data.pokemon[i].type}</p>
+                <img class="img-container" src=${data.pokemon[i].img}><br>
+                <p class="poke-name"> ${Capital(data.pokemon[i].name)} </p> 
+                <p class="description"> ${data.pokemon[i].about} </p>
+            </div>
+        </div>`
     }
+    container.innerHTML = contenedor
 }
 
 fetch("./data/pokemon/pokemon.json")
@@ -42,7 +51,7 @@ fetch("./data/pokemon/pokemon.json")
             return response.json();
         })
         .then(function(data){
-           appendData(data);
+           AppendData(data);
         })
         .catch(function(error){
             console.log(error);
