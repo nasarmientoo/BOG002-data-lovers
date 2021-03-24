@@ -34,13 +34,13 @@ body {
     80% {transform: translateY(-1px);}
 }
 
-.section2{
-    padding: 0;
-}
-
 .top-header{
     position: sticky;
     top: 0;
+}
+
+.content{
+    overflow-y: scroll;
 }
 
 .logo {

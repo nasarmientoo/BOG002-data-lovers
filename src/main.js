@@ -19,13 +19,9 @@ function Continue(section){
     section.style.display = 'block'
 }
 
-/*function rarityIcon(data){
-    for (let i = 0; i < data.pokemon.length; i++) {
-        if (data.pokemon[i][pokemon-rarity] === "normal"){
-           return "images/icons/pockemon-52.png"
-        }
-    }
-}*/
+function Mayuscula(x){
+    return x[0].toUpperCase() + x.substring(1);
+}
 
 function appendData(data){
     for (let i = 0; i < data.pokemon.length; i++) {     
@@ -34,13 +30,12 @@ function appendData(data){
                 <div class= "border-small">
                     <h2 class="poke-Number">N.° ${data.pokemon[i].num} </h2>      
                     <img class="img-container" src=${data.pokemon[i].img}><br>
-                    <p> ${data.pokemon[i].name} </p> 
+                    <p> ${Mayuscula(data.pokemon[i].name)} </p> 
                     <p class="description"> ${data.pokemon[i].about} </p>
                 </div>
             </div>`
     }
 }
-// <img class ="icon-rarity" src=${rarityIcon()}></img>
 
 fetch("./data/pokemon/pokemon.json")
         .then(function(response){
