@@ -4,9 +4,11 @@ import data from './data/pokemon/pokemon.js';
 let section1 = document.getElementById('section1');
 let section2 = document.getElementById('section2');
 let container = document.getElementById('pocket_Container');
+let popup = document.getElementById('pop-up');
 
 document.getElementById('pokebola1').addEventListener('click',() => Continue(section2));
 document.getElementById('icon-pokebola').addEventListener('click',() => Continue(section1));
+document.getElementById('pocket_Container').addEventListener('click',() => Show(popup));
 
 
 function Hide(){
@@ -16,6 +18,10 @@ function Hide(){
 
 function Continue(section){
     Hide()
+    section.style.display = 'block'
+}
+
+function Show(section){
     section.style.display = 'block'
 }
 
