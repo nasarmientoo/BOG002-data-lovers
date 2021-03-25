@@ -32,9 +32,9 @@ function AppendData(data){
                 <h2 class="poke-Number">N.° ${data.pokemon[i].num}</h2>
                 <div class="clasifics">
                     <p class="poke-rarity">
-                    <img class="icon-rarity" src="images/icons/circled-r-48.png" <br> ${Capital(data.pokemon[i]["pokemon-rarity"])}</p>
+                    <img class="icon-rarity" src="images/icons/circled-r-48.png" <br> Rarity: ${Capital(data.pokemon[i]["pokemon-rarity"])}</p>
                     <p class="generation" >
-                    <img class="icon-generation" src="images/icons/circled-g-48.png"  <br> ${Capital(data.pokemon[i].generation.name)} </p>
+                    <img class="icon-generation" src="images/icons/circled-g-48.png"  <br> Generation: ${Capital(data.pokemon[i].generation.name)} </p>
                 </div>
                 <p class="pokemon-type"> ${data.pokemon[i].type}</p>
                 <img class="img-container" src=${data.pokemon[i].img}><br>
