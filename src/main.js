@@ -4,12 +4,12 @@ import data from './data/pokemon/pokemon.js';
 let section1 = document.getElementById('section1');
 let section2 = document.getElementById('section2');
 let container = document.getElementById('pocket_Container');
-let cards = document.getElementsByClassName('card');
+//let cards = document.getElementsByClassName('card');
 let popup = document.getElementById('pop-up');
 
 document.getElementById('pokebola1').addEventListener('click',() => Continue(section2));
 document.getElementById('icon-pokebola').addEventListener('click',() => Continue(section1));
-cards.addEventListener('click',(e) => Show(popup,e));
+container.addEventListener('click',() => Show(popup));
 document.getElementById('close').addEventListener('click',() => Cover(popup))
 
 function Hide(){
@@ -22,8 +22,7 @@ function Continue(section){
     section.style.display = 'block'
 }
 
-function Show(section,x){
-    console.log(x.target)
+function Show(section){
     section.style.display = 'block'
 }
 
