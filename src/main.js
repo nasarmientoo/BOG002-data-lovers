@@ -4,13 +4,16 @@ import data from './data/pokemon/pokemon.js';
 let section1 = document.getElementById('section1');
 let section2 = document.getElementById('section2');
 let container = document.getElementById('pocket_Container');
-//let cards = document.getElementsByClassName('card');
 let popup = document.getElementById('pop-up');
+let content = document.getElementById('pop-up-content');
 
 document.getElementById('pokebola1').addEventListener('click',() => Continue(section2));
 document.getElementById('icon-pokebola').addEventListener('click',() => Continue(section1));
-container.addEventListener('click',() => Show(popup));
-document.getElementById('close').addEventListener('click',() => Cover(popup))
+//document.getElementById('close').addEventListener('click',() => Cover(popup))
+
+function Capital(x){
+    return x[0].toUpperCase() + x.substring(1);
+}
 
 function Hide(){
     section1.style.display = 'none'
@@ -22,23 +25,46 @@ function Continue(section){
     section.style.display = 'block'
 }
 
-function Show(section){
-    section.style.display = 'block'
-}
-
 function Cover(section){
     section.style.display = 'none'
 }
 
-function Capital(x){
-    return x[0].toUpperCase() + x.substring(1);
+function Display(section){
+    section.style.display = 'block'
+}
+
+//Arrojando a lo que se le da click
+function Show(e){
+    Display(popup)
+    const num = e.currentTarget.dataset.pokemon
+    let dataPopup = PokemonDetails(num)
+    content.innerHTML += 
+    `<h1>N.° ${dataPopup.num} ${Capital(dataPopup.name)}</h1>
+     <img class = "img-popup" src = ${dataPopup.img}>
+     <div class = "general">
+        Altura: ${dataPopup.size.height} <br>
+        Peso: ${dataPopup.size.weight} <br>
+        Rareza: ${dataPopup["pokemon-rarity"]} <br>
+        Tipo: ${dataPopup.type} 
+     </div>
+     <div class = "especifics" >
+        Resistencia: ${dataPopup.resistant} <br>
+        Debilidades: ${dataPopup.weaknesses}
+     </div>
+     <div>
+        Poderes: ${dataPopup["special-attack"][0].name} <br>
+        Quick Moves: ${dataPopup["quick-move"]}
+     </div>`
+     
+
+
 }
 
 function AppendData(data){
     let contenedor = ""
     for (let i = 0; i < data.pokemon.length; i++) {     
         contenedor += 
-        `<div class="card" type = "button">
+        `<div class="card" type = "button" data-pokemon = "${data.pokemon[i].num}">
             <div class= "border-small">
                 <h2 class="poke-Number">N.° ${data.pokemon[i].num}</h2>
                 <div class="clasifics">
@@ -63,7 +89,22 @@ fetch("./data/pokemon/pokemon.json")
         })
         .then(function(data){
            AppendData(data);
+           AddEvents();
         })
         .catch(function(error){
             console.log(error);
         });
+
+//Acceso a las cartas de las plantillas literales
+function AddEvents(){
+    let cards = document.getElementsByClassName('card');
+    for (let i = 0; i < cards.length; i++){
+        cards[i].addEventListener('click',Show)
+    }
+}
+
+function PokemonDetails(number){
+    var info = data.pokemon
+    const found = info.find(element => element.num === number);
+    return found;
+}
