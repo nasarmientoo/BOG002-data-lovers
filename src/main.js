@@ -32,23 +32,23 @@ function Display(section){
     section.style.display = 'block'
 }
 
-function printValues(obj){
-    let array = []
-    for (var key in obj) {
-        if (typeof obj[key] === "object") {
-            printValues(obj[key]);   
-        } else {
-            array.push(obj[key]);    
+function printValues(featuresList){
+    let template = ""
+    for (var i in featuresList) {
+        let attackDetails = featuresList[i]
+        for(var key in attackDetails){
+            let propertyValue = attackDetails[key]
+            template += "<p>"+ key +": "+ propertyValue + "</p>"
         }
     }
-    return(array)
+    return(template)
 }
 
 function Show(e){
     Display(popup)
     const num = e.currentTarget.dataset.pokemon
     let dataPopup = PokemonDetails(num)
-    content.innerHTML += 
+    content.innerHTML = 
         `<img id = "close" class = "icon-close" src = "images/icons/close-window-52.png">
          <h1>N.° ${dataPopup.num} ${Capital(dataPopup.name)}</h1>
          <img class = "img-popup" src = ${dataPopup.img}>
@@ -63,14 +63,11 @@ function Show(e){
             Debilidades: ${dataPopup.weaknesses}
          </div>
          <div>
-            Poderes: ${printValues(dataPopup["special-attack"].name)} <br>
-            Quick Moves: ${printValues(dataPopup["quick-move"].name)}
+            Poderes: ${printValues(dataPopup["special-attack"])} <br>
+            Quick Moves: ${printValues(dataPopup["quick-move"])}
          </div>`
-    
-    //document.getElementById('close').addEventListener('click',() => Cover(popup))
+    document.getElementById('close').addEventListener('click',() => Cover(popup))
 }
-
-
 
 function AppendData(data){
     let contenedor = ""
