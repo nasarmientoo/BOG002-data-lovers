@@ -9,7 +9,6 @@ let content = document.getElementById('pop-up-content');
 
 document.getElementById('pokebola1').addEventListener('click',() => Continue(section2));
 document.getElementById('icon-pokebola').addEventListener('click',() => Continue(section1));
-//document.getElementById('close').addEventListener('click',() => Cover(popup))
 
 function Capital(x){
     return x[0].toUpperCase() + x.substring(1);
@@ -33,32 +32,45 @@ function Display(section){
     section.style.display = 'block'
 }
 
-//Arrojando a lo que se le da click
+function printValues(obj){
+    let array = []
+    for (var key in obj) {
+        if (typeof obj[key] === "object") {
+            printValues(obj[key]);   
+        } else {
+            array.push(obj[key]);    
+        }
+    }
+    return(array)
+}
+
 function Show(e){
     Display(popup)
     const num = e.currentTarget.dataset.pokemon
     let dataPopup = PokemonDetails(num)
     content.innerHTML += 
-    `<h1>N.° ${dataPopup.num} ${Capital(dataPopup.name)}</h1>
-     <img class = "img-popup" src = ${dataPopup.img}>
-     <div class = "general">
-        Altura: ${dataPopup.size.height} <br>
-        Peso: ${dataPopup.size.weight} <br>
-        Rareza: ${dataPopup["pokemon-rarity"]} <br>
-        Tipo: ${dataPopup.type} 
-     </div>
-     <div class = "especifics" >
-        Resistencia: ${dataPopup.resistant} <br>
-        Debilidades: ${dataPopup.weaknesses}
-     </div>
-     <div>
-        Poderes: ${dataPopup["special-attack"][0].name} <br>
-        Quick Moves: ${dataPopup["quick-move"]}
-     </div>`
-     
-
-
+        `<img id = "close" class = "icon-close" src = "images/icons/close-window-52.png">
+         <h1>N.° ${dataPopup.num} ${Capital(dataPopup.name)}</h1>
+         <img class = "img-popup" src = ${dataPopup.img}>
+         <div class = "general">
+            Altura: ${dataPopup.size.height} <br>
+            Peso: ${dataPopup.size.weight} <br>
+            Rareza: ${dataPopup["pokemon-rarity"]} <br>
+            Tipo: ${dataPopup.type}
+         </div>
+         <div class = "especifics" >
+            Resistencia: ${dataPopup.resistant} <br>
+            Debilidades: ${dataPopup.weaknesses}
+         </div>
+         <div>
+            Poderes: ${printValues(dataPopup["special-attack"].name)} <br>
+            Quick Moves: ${printValues(dataPopup["quick-move"].name)}
+         </div>`
+    
+    //document.getElementById('close').addEventListener('click',() => Cover(popup))
 }
+
+
 
 function AppendData(data){
     let contenedor = ""
