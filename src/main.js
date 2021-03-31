@@ -34,37 +34,56 @@ function Display(section){
 
 function printValues(featuresList){
     let template = ""
-    for (var i in featuresList) {
+    for (let i in featuresList) {
         let attackDetails = featuresList[i]
-        for(var key in attackDetails){
+        let propertyValue = attackDetails["name"]
+        template += "<br>" + propertyValue;
+        /*for(var key in attackDetails){
             let propertyValue = attackDetails[key]
             template += "<p>"+ key +": "+ propertyValue + "</p>"
-        }
+        }*/
     }
     return(template)
 }
+
+/*function printsValue(evolutionPokemon){
+    let templateEvolution = ""
+    for (let i in evolutionPokemon) {
+        let evolutionDetails = evolutionPokemon[i]
+        for (let key in evolutionDetails) {
+            let evolutionValue = evolutionDetails["num"]
+            templateEvolution += "<p>" + key + ":" + evolutionValue + "</p>";
+        }
+         
+    }
+    console.log(templateEvolution);
+}   */ 
 
 function Show(e){
     Display(popup)
     const num = e.currentTarget.dataset.pokemon
     let dataPopup = PokemonDetails(num)
     content.innerHTML = 
-        `<img id = "close" class = "icon-close" src = "images/icons/close-window-52.png">
-         <h1>N.° ${dataPopup.num} ${Capital(dataPopup.name)}</h1>
-         <img class = "img-popup" src = ${dataPopup.img}>
-         <div class = "general">
-            Altura: ${dataPopup.size.height} <br>
-            Peso: ${dataPopup.size.weight} <br>
-            Rareza: ${dataPopup["pokemon-rarity"]} <br>
-            Tipo: ${dataPopup.type}
-         </div>
-         <div class = "especifics" >
-            Resistencia: ${dataPopup.resistant} <br>
-            Debilidades: ${dataPopup.weaknesses}
-         </div>
-         <div>
-            Poderes: ${printValues(dataPopup["special-attack"])} <br>
-            Quick Moves: ${printValues(dataPopup["quick-move"])}
+        `<div class = "popup-content">
+            <img id = "close" class = "icon-close" src = "images/icons/close-window-52.png">
+            <h1 class = "popup-num">N.° ${dataPopup.num} ${Capital(dataPopup.name)}</h1>
+            <img class = "img-popup" src = ${dataPopup.img}> 
+            <div class = "general">
+            &nbsp Height:  ${dataPopup.size.height} <br>
+            &nbsp Weight:  ${dataPopup.size.weight} <br>
+            &nbsp Rarity: ${dataPopup["pokemon-rarity"]} <br>
+            &nbsp Type: ${dataPopup.type}
+            </div>
+            <div class = "especifics" > 
+            Resistant: <br> ${dataPopup.resistant} <br> <br>
+            Weaknesses: <br> ${dataPopup.weaknesses}
+            </div>
+                <div class = "attack">
+                &nbsp Special Attack: ${printValues(dataPopup["special-attack"])} <br>
+                </div>   
+                <div class = "quick">
+                &nbsp Quick Moves: ${printValues(dataPopup["quick-move"])}
+            </div>
          </div>`
     document.getElementById('close').addEventListener('click',() => Cover(popup))
 }
