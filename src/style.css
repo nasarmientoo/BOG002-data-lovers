@@ -1,9 +1,14 @@
-#section1{display: block}
-#section2{display: none}
-#pop-up{display: none}
+#section1{
+    display: block;
+    text-align: center
+}
+#section2{
+    display: none;
+    text-align: center
+}
 
-#section1 {text-align: center;}
-#section2 {text-align: center;}
+#pop-up{display: none}
+#sidebar{display: none}
 
 body {
     background-image: url(./images/background.png);
@@ -36,9 +41,42 @@ body {
     80% {transform: translateY(-1px);}
 }
 
+.sidebar{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 300px;
+    height: 100%;
+    background: white;
+    margin: 0px;    
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.sidebar header{
+    font-size: 22px;
+    text-align: center;
+    line-height: 70px;
+    user-select: none;
+    font-family: 'Fira Code', monospace;
+    font-weight: bolder;
+}
+
+.dropdown-btn{
+    padding: 5px 10px 10px 20px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 90%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 30px;
+}
+
 .top-header{
     top: 0;
-    height: 35vh;
+    height:auto;
 }
 
 .content{
@@ -48,8 +86,8 @@ body {
 
 .logo {
     margin: auto;
-    width: 350px;
-    height: 150px;
+    width: 280px;
+    height: 110px;
 }
 
 .searching {
@@ -63,6 +101,7 @@ body {
     text-align: center;
     padding: 1rem;
     margin: 0 auto;
+    margin-bottom: 20px;
     text-align: center
 }
 
@@ -85,20 +124,15 @@ body {
 .icon-menu {
     float: left;
     margin: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
 }
 
 .icon-pokebola {
     float: right;
     margin: 10px;
     cursor: pointer;
-}
-
-.icon-info {
-    float: right;
-    margin: 10px;
-}
-
-[class^='icon-']{
     width: 60px;
     height: 60px;
 }
@@ -125,13 +159,13 @@ body {
     box-sizing: border-box;
     margin: 10px;
     height: 50px;
-    width: 270px;
+    width: 330px;
 }
 
 .generation {
     float: left;
     padding-left: 50px;
-    font-size: 13px;
+    font-size: 15px;
     margin: -5px auto;
     font-family: 'Fira Code', monospace;
     font-style: normal;
@@ -141,10 +175,9 @@ body {
 .poke-rarity {
     float: left;
     padding-left: 50px;
-    font-size: 13px;
+    font-size: 15px;
     margin: -1px auto;
     font-family: 'Fira Code', monospace;
-    
 }
 
 .icon-generation {
@@ -162,7 +195,7 @@ body {
     background-color: rgba(188, 141, 250, 0.671);
     border-radius: 20px;
     margin: 1px auto;
-    width: 110px;
+    width: 135px;
     height: 28px;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 17px;
@@ -170,10 +203,10 @@ body {
 
 .card {
     padding: 10px;
-    margin: 40px 20px;
+    margin: 30px 10px;
     text-align: center;
-    width: 320px;
-    height: 491px;
+    width: 375px;
+    height: 525px;
     background: #ffffff;
     border: 2px solid #000000;
     box-sizing: border-box;
@@ -193,7 +226,7 @@ body {
 }
 
 .border-small {
-    height: 465px;
+    height: 500px;
     border: 2px solid #000000;
     box-sizing: border-box;
     border-radius: 7px;
@@ -202,15 +235,15 @@ body {
 .description {
     padding: 5px;
     margin: auto;
-    width: 265px;
-    height: 127px;
+    width: 330px;
+    height: 160px;
     border: 2px solid black;
     box-sizing: border-box;
     border-radius: 10px;
     text-align: center;
     margin: 12px auto;
     font-family: 'Fira Code', monospace;
-    font-size: 11.6px;
+    font-size: 15px;
 }
 
 .poke-name {
@@ -240,10 +273,11 @@ body {
     height: 450px;
     position: absolute;
     background-color: white;
-    border-radius: 4px;
+    border-radius: 7px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 2px solid black;
     /*top: 30%;
     left: 39%;*/
 }
@@ -251,4 +285,96 @@ body {
 .icon-close{
     cursor: pointer;
     float: right;
+}
+
+.popup-content {
+    height: 430px;
+    width: 680px;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    margin: 8px;
+    font-family: 'Fira Code', monospace;
+}
+
+.popup-num {
+    margin: auto;
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+}
+
+.img-popup {
+    width: 180px;
+    height: 180px;
+    margin: 0px 50px;
+}
+
+.general {
+    margin: 2px 8px;
+    color: white;
+    background-color: #67B9D3;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 210px;
+    height: 74px;
+    font-size: 15px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.attack {
+    float: right;
+    background-color: rgb(202, 180, 209);
+    text-align: center;
+    height: 120px;
+    width: 170px;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    margin: -140px 260px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.quick {
+    background-color: rgb(202, 188, 253);
+    float: right;
+    text-align: center;
+    height: 120px;
+    width: 170px;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    margin: -140px 55px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.especifics {
+    background-color: rgba(208, 196, 214, 0.473);
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 100px;
+    width: 375px;
+    margin: -105px 245px;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.icon-close {
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 580px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-header {
+        height: 50%;
+        width: 50%;
+        margin: 20px 0;
+    }
+
+    .icon-pokebola {
+        position: static;
+
+    }
 }

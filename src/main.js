@@ -1,18 +1,20 @@
-import { example } from './data.js';
+import {filterSearch} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 let section1 = document.getElementById('section1');
 let section2 = document.getElementById('section2');
 let container = document.getElementById('pocket_Container');
+let sidebar = document.getElementById('sidebar');
 let popup = document.getElementById('pop-up');
 let content = document.getElementById('pop-up-content');
+let text = document.getElementById('text');
 
 document.getElementById('pokebola1').addEventListener('click', () => Continue(section2));
 document.getElementById('icon-pokebola').addEventListener('click', () => Continue(section1));
+document.getElementById('icon-menu').addEventListener('click', () => Display(sidebar));
+document.getElementById('icon-close-search').addEventListener('click', () => Cover(sidebar));
 
-function Capital(x) {
-    return x[0].toUpperCase() + x.substring(1);
-}
+document.getElementById('icon-lupa').addEventListener('click', () => filterSearch(text,data.pokemon))
 
 function Hide() {
     section1.style.display = 'none'
@@ -32,39 +34,49 @@ function Display(section) {
     section.style.display = 'block'
 }
 
+function Capital(x) {
+    return x[0].toUpperCase() + x.substring(1);
+}
+
 function printValues(featuresList) {
     let template = ""
-    for (var i in featuresList) {
+    for (let i in featuresList) {
         let attackDetails = featuresList[i]
-        for (var key in attackDetails) {
+        let propertyValue = attackDetails["name"]
+        template += "<br>" + propertyValue;
+        /*for(var key in attackDetails){
             let propertyValue = attackDetails[key]
-            template += "<p>" + key + ": " + propertyValue + "</p>"
-        }
+            template += "<p>"+ key +": "+ propertyValue + "</p>"
+        }*/
     }
     return (template)
 }
 
-function Show(e) {
+function Show(e){
     Display(popup)
     const num = e.currentTarget.dataset.pokemon
     let dataPopup = PokemonDetails(num)
-    content.innerHTML =
-        `<img id = "close" class = "icon-close" src = "images/icons/close-window-52.png">
-         <h1>N.° ${dataPopup.num} ${Capital(dataPopup.name)}</h1>
-         <img class = "img-popup" src = ${dataPopup.img}>
-         <div class = "general">
-            Altura: ${dataPopup.size.height} <br>
-            Peso: ${dataPopup.size.weight} <br>
-            Rareza: ${dataPopup["pokemon-rarity"]} <br>
-            Tipo: ${dataPopup.type}
-         </div>
-         <div class = "especifics" >
-            Resistencia: ${dataPopup.resistant} <br>
-            Debilidades: ${dataPopup.weaknesses}
-         </div>
-         <div>
-            Poderes: ${printValues(dataPopup["special-attack"])}
-            Quick Moves: ${printValues(dataPopup["quick-move"])}
+    content.innerHTML = 
+        `<div class = "popup-content">
+            <img id = "close" class = "icon-close" src = "images/icons/close-window-52.png">
+            <h1 class = "popup-num">N.° ${dataPopup.num} ${Capital(dataPopup.name)}</h1>
+            <img class = "img-popup" src = ${dataPopup.img}> 
+            <div class = "general">
+            &nbsp Height:  ${dataPopup.size.height} <br>
+            &nbsp Weight:  ${dataPopup.size.weight} <br>
+            &nbsp Rarity: ${dataPopup["pokemon-rarity"]} <br>
+            &nbsp Type: ${dataPopup.type}
+            </div>
+            <div class = "especifics" > 
+            Resistant: <br> ${dataPopup.resistant} <br> <br>
+            Weaknesses: <br> ${dataPopup.weaknesses}
+            </div>
+                <div class = "attack">
+                &nbsp Special Attack: ${printValues(dataPopup["special-attack"])} <br>
+                </div>   
+                <div class = "quick">
+                &nbsp Quick Moves: ${printValues(dataPopup["quick-move"])}
+            </div>
          </div>`
     document.getElementById('close').addEventListener('click', () => Cover(popup))
 }
@@ -92,19 +104,7 @@ function AppendData(data) {
     container.innerHTML = contenedor
 }
 
-fetch("./data/pokemon/pokemon.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        AppendData(data);
-        AddEvents();
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
-
-//Acceso a las cartas de las plantillas literales
+//Acceso a las cartas de las plantillas literales, se accede a la función Show
 function AddEvents() {
     let cards = document.getElementsByClassName('card');
     for (let i = 0; i < cards.length; i++) {
@@ -117,3 +117,15 @@ function PokemonDetails(number) {
     const found = info.find(element => element.num === number);
     return found;
 }
+
+fetch("./data/pokemon/pokemon.json")
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        AppendData(data);
+        AddEvents();
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
