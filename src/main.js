@@ -81,6 +81,7 @@ function Show(e){
                 <div class = "quick">
                 &nbsp Quick Moves: ${printValues(dataPopup["quick-move"])}
             </div>
+            <img class="banner" src="images/banner.png" >
          </div>`
     document.getElementById('close').addEventListener('click', () => Cover(popup))
 }

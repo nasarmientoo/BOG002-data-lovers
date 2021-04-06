@@ -337,6 +337,13 @@ body {
     margin: 0px 50px;
 }
 
+.banner {
+    margin: -210px 0px;
+    width: 680px;
+    height: 115px;
+    border-radius: 7px;
+}
+
 .general {
     margin: 2px 8px;
     color: white;
