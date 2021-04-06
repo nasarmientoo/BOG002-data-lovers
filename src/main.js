@@ -9,7 +9,6 @@ let popup = document.getElementById('pop-up');
 let content = document.getElementById('pop-up-content');
 let message = document.querySelector('#mensaje');
 
-
 document.getElementById('pokebola1').addEventListener('click', () => Continue(section2));
 document.getElementById('icon-pokebola').addEventListener('click', () => Continue(section1));
 document.getElementById('icon-menu').addEventListener('click', () => Display(sidebar));
@@ -123,8 +122,6 @@ function PokemonDetails(number) {
     return found;
 }
 
-
-
 //Filtrar datos por nombre y numero
 const input = document.querySelector('.text');
 input.addEventListener('keyup', (e) => {
@@ -140,8 +137,6 @@ input.addEventListener('keyup', (e) => {
     AddEvents(searchInfo);
 
 });
-
-
 
 fetch("./data/pokemon/pokemon.json")
     .then(function (response) {

@@ -8,7 +8,6 @@ export const filterSearch = (data, pocket) => {
   })
 }
 
-
 /*export const filterSearch = (text,data) => {
   let input = text.value;
   for (let i = 0; i < data.length; i++) { 
