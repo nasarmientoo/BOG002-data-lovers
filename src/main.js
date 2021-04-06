@@ -7,14 +7,15 @@ let container = document.getElementById('pocket_Container');
 let sidebar = document.getElementById('sidebar');
 let popup = document.getElementById('pop-up');
 let content = document.getElementById('pop-up-content');
-let text = document.getElementById('text');
+let message = document.querySelector('#mensaje');
+
 
 document.getElementById('pokebola1').addEventListener('click', () => Continue(section2));
 document.getElementById('icon-pokebola').addEventListener('click', () => Continue(section1));
 document.getElementById('icon-menu').addEventListener('click', () => Display(sidebar));
 document.getElementById('icon-close-search').addEventListener('click', () => Cover(sidebar));
 
-document.getElementById('icon-lupa').addEventListener('click', () => filterSearch(text,data.pokemon))
+//document.getElementById('icon-lupa').addEventListener('click', () => filterSearch(text,data.pokemon))
 
 function Hide() {
     section1.style.display = 'none'
@@ -31,6 +32,10 @@ function Cover(section) {
 }
 
 function Display(section) {
+    section.style.display = 'block'
+}
+
+function opt (section) {
     section.style.display = 'block'
 }
 
@@ -83,21 +88,21 @@ function Show(e){
 
 function AppendData(data) {
     let contenedor = ""
-    for (let i = 0; i < data.pokemon.length; i++) {
+    for (let i = 0; i < data.length; i++) {
         contenedor +=
-            `<div class="card" type = "button" data-pokemon = "${data.pokemon[i].num}">
+            `<div class="card" type = "button" data-pokemon = "${data[i].num}">
             <div class= "border-small">
-                <h2 class="poke-Number">N.° ${data.pokemon[i].num}</h2>
+                <h2 class="poke-Number">N.° ${data[i].num}</h2>
                 <div class="clasifics">
                     <p class="poke-rarity">
-                    <img class="icon-rarity" src="images/icons/circled-r-48.png" <br> Rarity: ${Capital(data.pokemon[i]["pokemon-rarity"])}</p>
+                    <img class="icon-rarity" src="images/icons/circled-r-48.png" <br> Rarity: ${Capital(data[i]["pokemon-rarity"])}</p>
                     <p class="generation" >
-                    <img class="icon-generation" src="images/icons/circled-g-48.png"  <br> Generation: ${Capital(data.pokemon[i].generation.name)} </p>
+                    <img class="icon-generation" src="images/icons/circled-g-48.png"  <br> Generation: ${Capital(data[i].generation.name)} </p>
                 </div>
-                <p class="pokemon-type"> ${data.pokemon[i].type}</p>
-                <img class="img-container" src=${data.pokemon[i].img}><br>
-                <p class="poke-name"> ${Capital(data.pokemon[i].name)} </p> 
-                <p class="description"> ${data.pokemon[i].about} </p>
+                <p class="pokemon-type"> ${data[i].type}</p>
+                <img class="img-container" src=${data[i].img}><br>
+                <p class="poke-name"> ${Capital(data[i].name)} </p> 
+                <p class="description"> ${data[i].about} </p>
             </div>
         </div>`
     }
@@ -118,12 +123,32 @@ function PokemonDetails(number) {
     return found;
 }
 
+
+
+//Filtrar datos por nombre y numero
+const input = document.querySelector('.text');
+input.addEventListener('keyup', (e) => {
+    let searchName = e.target.value;
+    let searchInfo = filterSearch (data.pokemon, searchName);
+    
+    if(searchInfo.length === 0) {
+        message.innerHTML = "Sorry, please check try again";
+    } else {
+        message.innerHTML = " ";
+    }
+    AppendData(searchInfo);
+    AddEvents(searchInfo);
+
+});
+
+
+
 fetch("./data/pokemon/pokemon.json")
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
-        AppendData(data);
+        AppendData(data.pokemon);
         AddEvents();
     })
     .catch(function (error) {

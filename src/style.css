@@ -51,6 +51,21 @@ body {
     margin: 0px;    
     border-radius: 10px;
     border: 2px solid black;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgba(2, 2, 2, 0.664); 
 }
 
 .sidebar header{
@@ -72,6 +87,20 @@ body {
     border-radius: 20px;
     border: none;
     margin-bottom: 30px;
+}
+
+.dropdown-btn1 {
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 5px 15px 10px 20px;
+    margin: 0px 50px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 70%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;   
 }
 
 .top-header{
