@@ -8,14 +8,17 @@ export const filterSearch = (data, pocket) => {
   })
 }
 
-/*export const filterSearch = (text,data) => {
-  let input = text.value;
-  for (let i = 0; i < data.length; i++) { 
-    if (data[i].toLowerCase().includes(input)) {
-      data[i].style.display="none";
-    }
-    else {
-      data[i].style.display="list-item";                 
-    }
+export const orderFilter = (data, sort) => {
+  const newArray = data.slice()
+  let orderNames= newArray.sort((a,b) => ((a.name > b.name ? 1 : -1 ))) 
+
+
+  if (sort === 'ascendente') {
+    return orderNames;
   }
-}*/
+  
+  if (sort === 'descendente') {
+    orderNames = orderNames.reverse()
+  }
+  return orderNames;
+};
