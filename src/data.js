@@ -12,7 +12,6 @@ export const orderFilter = (data, sort) => {
   const newArray = data.slice()
   let orderNames= newArray.sort((a,b) => ((a.name > b.name ? 1 : -1 ))) 
 
-
   if (sort === 'ascendente') {
     return orderNames;
   }

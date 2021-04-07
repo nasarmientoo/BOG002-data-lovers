@@ -146,7 +146,6 @@ input.addEventListener('keyup', (e) => {
     }
     AppendData(searchInfo);
     AddEvents(searchInfo);
-
 });
 
 //Filtrar de manera ascendente o descendente
