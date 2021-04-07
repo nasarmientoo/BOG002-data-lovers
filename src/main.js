@@ -1,4 +1,4 @@
-import {filterSearch} from './data.js';
+import {filterSearch, orderFilter} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 let section1 = document.getElementById('section1');
@@ -8,6 +8,12 @@ let sidebar = document.getElementById('sidebar');
 let popup = document.getElementById('pop-up');
 let content = document.getElementById('pop-up-content');
 let message = document.querySelector('#mensaje');
+let ordenar = document.getElementById('order');
+let btnOrder = document.getElementById('btnOrder');
+let ascendente = document.querySelector('#ascendente');
+let descendente = document.querySelector('#descendente');
+
+btnOrder.addEventListener('click', () => Display(ordenar));
 
 document.getElementById('pokebola1').addEventListener('click', () => Continue(section2));
 document.getElementById('icon-pokebola').addEventListener('click', () => Continue(section1));
@@ -34,8 +40,12 @@ function Display(section) {
     section.style.display = 'block'
 }
 
-function opt (section) {
-    section.style.display = 'block'
+function showandhide (section) {
+    if (section.style.display === 'none') {
+        section.style.display === 'block'
+    } else {
+        section.style.display === 'none'
+    }
 }
 
 function Capital(x) {
@@ -137,6 +147,16 @@ input.addEventListener('keyup', (e) => {
     AppendData(searchInfo);
     AddEvents(searchInfo);
 });
+
+//Filtrar de manera ascendente o descendente
+descendente.addEventListener('click', (e) => {
+AppendData(orderFilter (data.pokemon, 'descendente'));
+})
+
+ascendente.addEventListener('click', (e) => {
+AppendData(orderFilter(data.pokemon, 'ascendente'));   
+})
+
 
 fetch("./data/pokemon/pokemon.json")
     .then(function (response) {
