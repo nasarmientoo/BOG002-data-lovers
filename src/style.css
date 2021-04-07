@@ -25,8 +25,8 @@ body {
 
 #pokebola1 {
     margin: auto;
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     cursor: pointer;
 }
 
@@ -115,8 +115,8 @@ body {
 
 .logo {
     margin: auto;
-    width: 280px;
-    height: 110px;
+    width: 300px;
+    height: 130px;
 }
 
 .searching {
