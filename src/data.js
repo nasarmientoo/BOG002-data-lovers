@@ -8,8 +8,6 @@ export const filterSearch = (data, pocket) => {
   })
 }
 
-<<<<<<< HEAD
-=======
 export const orderFilter = (data, sort) => {
   const newArray = data.slice()
   let orderNames= newArray.sort((a,b) => ((a.name > b.name ? 1 : -1 ))) 
@@ -23,4 +21,7 @@ export const orderFilter = (data, sort) => {
   }
   return orderNames;
 };
->>>>>>> 75485e6b85f0a67b98e95d5c3a46f3871af90f86
+
+export const showCategory = (data,category) =>{
+ let all = data.map(obj => obj )
+}

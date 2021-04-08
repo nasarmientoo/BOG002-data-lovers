@@ -1,4 +1,4 @@
-import {filterSearch, orderFilter} from './data.js';
+import {filterSearch, orderFilter, showCategory} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 let section1 = document.getElementById('section1');
@@ -13,7 +13,7 @@ let btnOrder = document.getElementById('btnOrder');
 let ascendente = document.querySelector('#ascendente');
 let descendente = document.querySelector('#descendente');
 
-btnOrder.addEventListener('click', () => Display(ordenar));
+btnOrder.addEventListener('click', () => ShowAndHide(ordenar));
 
 document.getElementById('pokebola1').addEventListener('click', () => Continue(section2));
 document.getElementById('icon-pokebola').addEventListener('click', () => Continue(section1));
@@ -40,11 +40,11 @@ function Display(section) {
     section.style.display = 'block'
 }
 
-function showandhide (section) {
+function ShowAndHide (section) {
     if (section.style.display === 'none') {
-        section.style.display === 'block'
+        section.style.display = 'block'
     } else {
-        section.style.display === 'none'
+        section.style.display = 'none'
     }
 }
 
@@ -133,6 +133,14 @@ function PokemonDetails(number) {
     return found;
 }
 
+//Categorizar las variables
+function GroupByCategory (data,category){
+    for(let i = 0; 1 < data.lenght; i++){
+        showCategory(data[1],category)
+    }
+}
+
+
 //Filtrar datos por nombre y numero
 const input = document.querySelector('.text');
 input.addEventListener('keyup', (e) => {
@@ -156,7 +164,6 @@ AppendData(orderFilter (data.pokemon, 'descendente'));
 ascendente.addEventListener('click', (e) => {
 AppendData(orderFilter(data.pokemon, 'ascendente'));   
 })
-
 
 fetch("./data/pokemon/pokemon.json")
     .then(function (response) {
