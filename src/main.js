@@ -1,4 +1,4 @@
-import {filterSearch, orderFilter, showCategory} from './data.js';
+import {filterSearch, orderFilter, orderFilterNum, typeFilter} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 let section1 = document.getElementById('section1');
@@ -12,8 +12,19 @@ let ordenar = document.getElementById('order');
 let btnOrder = document.getElementById('btnOrder');
 let ascendente = document.querySelector('#ascendente');
 let descendente = document.querySelector('#descendente');
+let numAscendente = document.querySelector('#numAscendente');
+let numDescendente = document.querySelector('#numDescendente');
+let input = document.querySelector('.text');
+let types = document.querySelector('#type');
+let btnTypes = document.querySelector('#btnType');
+let generations = document.querySelector('#generations');
+let btnGeneration = document.querySelector('#btnGeneration');
+let btnType = document.querySelector('.btnTypes');
 
 btnOrder.addEventListener('click', () => ShowAndHide(ordenar));
+btnTypes.addEventListener('click', () => ShowAndHide(types));
+btnGeneration.addEventListener('click', () => ShowAndHide(generations));
+
 
 document.getElementById('pokebola1').addEventListener('click', () => Continue(section2));
 document.getElementById('icon-pokebola').addEventListener('click', () => Continue(section1));
@@ -58,10 +69,6 @@ function printValues(featuresList) {
         let attackDetails = featuresList[i]
         let propertyValue = attackDetails["name"]
         template += "<br>" + propertyValue;
-        /*for(var key in attackDetails){
-            let propertyValue = attackDetails[key]
-            template += "<p>"+ key +": "+ propertyValue + "</p>"
-        }*/
     }
     return (template)
 }
@@ -96,6 +103,7 @@ function Show(e){
     document.getElementById('close').addEventListener('click', () => Cover(popup))
 }
 
+//Función para traer la data a las cartas 
 function AppendData(data) {
     let contenedor = ""
     for (let i = 0; i < data.length; i++) {
@@ -119,7 +127,7 @@ function AppendData(data) {
     container.innerHTML = contenedor
 }
 
-//Acceso a las cartas de las plantillas literales, se accede a la función Show
+//Acceso a las cartas de las plantillas literales del popup, se accede a la función Show
 function AddEvents() {
     let cards = document.getElementsByClassName('card');
     for (let i = 0; i < cards.length; i++) {
@@ -133,16 +141,7 @@ function PokemonDetails(number) {
     return found;
 }
 
-//Categorizar las variables
-function GroupByCategory (data,category){
-    for(let i = 0; 1 < data.lenght; i++){
-        showCategory(data[1],category)
-    }
-}
-
-
-//Filtrar datos por nombre y numero
-const input = document.querySelector('.text');
+//Filtrar datos por nombre y número
 input.addEventListener('keyup', (e) => {
     let searchName = e.target.value;
     let searchInfo = filterSearch (data.pokemon, searchName);
@@ -154,17 +153,46 @@ input.addEventListener('keyup', (e) => {
     }
     AppendData(searchInfo);
     AddEvents(searchInfo);
+
 });
 
-//Filtrar de manera ascendente o descendente
+//Filtrar de manera ascendente y descendente por nombre y número
 descendente.addEventListener('click', (e) => {
 AppendData(orderFilter (data.pokemon, 'descendente'));
-})
+AddEvents()
+});
 
 ascendente.addEventListener('click', (e) => {
-AppendData(orderFilter(data.pokemon, 'ascendente'));   
+AppendData(orderFilter(data.pokemon, 'ascendente'));
+AddEvents()   
+});
+
+numDescendente.addEventListener('click', (e) => {
+AppendData(orderFilterNum(data.pokemon, '251-1'));
+AddEvents()
+});
+    
+numAscendente.addEventListener('click', (e) => {
+AppendData(orderFilterNum(data.pokemon, '1-251'));
+AddEvents()   
+});
+
+//Filtrar por categoría 
+/*btnType.addEventListener('click', () => {
+    let Value = btnType.value;
+    let filterCat = filterByCategory(data.pokemon, Value);
+    AppendData(filterCat);
+})*/
+
+//Filtrar por categoria
+const select = document.getElementById('selectorTag');
+select.addEventListener('change',() => {
+    const value = select.value;
+    AppendData(typeFilter(data.pokemon,value))
 })
 
+
+//Llamar los datos con la API Fetch
 fetch("./data/pokemon/pokemon.json")
     .then(function (response) {
         return response.json();

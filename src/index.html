@@ -27,13 +27,41 @@
       </header>
       <button class="dropdown-btn" id="btnOrder">&#43 Ordenar</button>
         <div id="order">
-        <button id="ascendente">&#45 A-Z</button>
-        <button id="descendente">&#45 Z-A</button>
+        <button id="ascendente">&#45 A~Z</button>
+        <button id="descendente">&#45 Z~A</button>
+        <button id="numAscendente">&#45 1~251</button>
+        <button id="numDescendente">&#45 251~1</button>
         </div>
-      <button class="dropdown-btn">&#43 Tipo</button>
-      <button class="dropdown-btn">&#43 Generación</button>
-      <button class="dropdown-btn">&#43 Resistencia</button>
-      <button class="dropdown-btn">&#43 Debilidad</button>
+      <button class="dropdown-btn" id="btnType">&#43 Tipo</button>
+        <div id="type">
+          <select name = "types" id = "selectorTag">
+            <option value="all" class= "btnTypes">&#45 Ver todos</option>
+            <option value="Normal" class= "btnTypes">&#45 Normal</option>
+            <option value="Water" class= "btnTypes">&#45 Water</option>
+            <option value="Electric" class= "btnTypes">&#45 Electric</option>
+            <option value="Fighting" class= "btnTypes">&#45 Fighting</option>
+            <option value="Ground" class= "btnTypes">&#45 Ground</option>
+            <option value="Psychic" class= "btnTypes">&#45 Psychic</option>
+            <option value="Rock" class= "btnTypes">&#45 Rock</option>
+            <option value="Dark" class= "btnTypes">&#45 Dark</option>
+            <option value="Fire" class= "btnTypes">&#45 Fire</option>
+            <option value="Grass" class= "btnTypes">&#45 Grass</option>
+            <option value="Ice" class= "btnTypes">&#45 Ice</option>
+            <option value="Poison" class= "btnTypes">&#45 Poison</option>
+            <option value="Flying" class= "btnTypes">&#45 Flying</option>
+            <option value="Bug" class= "btnTypes">&#45 Bug</option>
+            <option value="Ghost" class= "btnTypes">&#45 Ghost</option>
+            <option value="Fairy" class= "btnTypes">&#45 Fairy</option>
+            <option value="Dragon" class= "btnTypes">&#45 Dragon</option>
+            <option value="Steel" class= "btnTypes">&#45 Steel</button>
+          </select>
+        </div>
+        <button class="dropdown-btn" id="btnGeneration">&#43 Generación</button>
+          <div id="generations">
+          <button value="kanto" class="btnGenerations">&#45 Kanto</button>
+          <button value="kanto" class="btnGenerations">&#45 Johto</button>
+          </div>
+        
     </div>
     <div class="top-header" id="header">
       <img id="icon-menu" class="icon-menu" src="images/icons/menu-50.png">

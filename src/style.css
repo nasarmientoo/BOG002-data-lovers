@@ -10,6 +10,8 @@
 #pop-up{display: none}
 #sidebar{display: none}
 #order{display: none}
+#type{display: none}
+#generations{display: none}
 
 body {
     background-image: url(./images/background.png);
@@ -118,6 +120,61 @@ body {
     margin-bottom: 20px;   
 }
 
+#numAscendente {
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 5px 15px 10px 20px;
+    margin: 0px 50px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 70%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;   
+}
+
+#numDescendente {
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 5px 15px 10px 20px;
+    margin: 0px 50px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 70%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;   
+}
+
+.btnTypes {
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 5px 15px 10px 20px;
+    margin: 0px 50px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 70%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;  
+}
+
+.btnGenerations {
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 5px 15px 10px 20px;
+    margin: 0px 50px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 70%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;  
+}
 
 .top-header{
     top: 0;
@@ -323,8 +380,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid black;
-    /*top: 30%;
-    left: 39%;*/
 }
 
 .icon-close{
@@ -350,7 +405,7 @@ body {
 .img-popup {
     width: 180px;
     height: 180px;
-    margin: 0px 50px;
+    margin: 0px 30px;
 }
 
 .banner {
