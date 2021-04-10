@@ -148,18 +148,19 @@ body {
     margin-bottom: 20px;   
 }
 
-.btnTypes {
-    background-color: rgba(128, 128, 128, 0.267);
-    padding: 5px 15px 10px 20px;
-    margin: 0px 50px;
+
+#type {
+    padding: 5px 10px 10px 20px;
+    background-color: rgb(236, 233, 233);
     font-size: 20px;
     font-family: 'Fira Code', monospace;
-    width: 70%;
+    width: 90%;
     text-align: left;
     cursor: pointer;
     border-radius: 20px;
     border: none;
-    margin-bottom: 20px;  
+    margin-bottom: 30px;  
+    margin: 0px 15px 25px;
 }
 
 .btnGenerations {
