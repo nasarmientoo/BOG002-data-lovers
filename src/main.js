@@ -1,4 +1,4 @@
-import {filterSearch, orderFilter, orderFilterNum, typeFilter} from './data.js';
+import {filterSearch, orderFilter, orderFilterNum, filterByGeneration, filterByType} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 let section1 = document.getElementById('section1');
@@ -19,7 +19,9 @@ let types = document.querySelector('#type');
 let btnTypes = document.querySelector('#btnType');
 let generations = document.querySelector('#generations');
 let btnGeneration = document.querySelector('#btnGeneration');
-let btnType = document.querySelector('.btnTypes');
+let btngenerations = document.querySelector('#btngenerations');
+let btngeneration = document.querySelector('#btnGenerations');
+let btntype = document.querySelector('#type')
 
 btnOrder.addEventListener('click', () => ShowAndHide(ordenar));
 btnTypes.addEventListener('click', () => ShowAndHide(types));
@@ -31,7 +33,6 @@ document.getElementById('icon-pokebola').addEventListener('click', () => Continu
 document.getElementById('icon-menu').addEventListener('click', () => Display(sidebar));
 document.getElementById('icon-close-search').addEventListener('click', () => Cover(sidebar));
 
-//document.getElementById('icon-lupa').addEventListener('click', () => filterSearch(text,data.pokemon))
 
 function Hide() {
     section1.style.display = 'none'
@@ -73,6 +74,7 @@ function printValues(featuresList) {
     return (template)
 }
 
+//Función que contiene la información general en el popup
 function Show(e){
     Display(popup)
     const num = e.currentTarget.dataset.pokemon
@@ -177,12 +179,28 @@ AppendData(orderFilterNum(data.pokemon, '1-251'));
 AddEvents()   
 });
 
-//Filtrar por categoría 
-/*btnType.addEventListener('click', () => {
-    let Value = btnType.value;
-    let filterCat = filterByCategory(data.pokemon, Value);
-    AppendData(filterCat);
-})*/
+//Filtrar por Tipo
+btntype.addEventListener('change', (e) => {
+const value = btntype.value;
+AppendData(filterByType(data.pokemon, value))
+AddEvents()
+})
+ 
+
+
+//Filtrar por Generación
+btngenerations.addEventListener('click', () => {
+const value = btngenerations.value;
+AppendData(filterByGeneration(data.pokemon, value));
+AddEvents()
+});
+
+btngeneration.addEventListener('click', () => {
+const value = btnGenerations.value;
+AppendData(filterByGeneration(data.pokemon, value));
+AddEvents()
+});
+
 
 //Filtrar por categoria
 const select = document.getElementById('selectorTag');

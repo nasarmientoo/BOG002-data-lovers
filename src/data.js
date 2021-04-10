@@ -1,3 +1,4 @@
+//Filtrado por nombre y número
 export const filterSearch = (data, pocket) => {
   return data.filter(pokemon => {
     if(isNaN(pocket)) { 
@@ -8,6 +9,7 @@ export const filterSearch = (data, pocket) => {
   })
 }
 
+//Filtrado en forma ascendente y descendente por nombre
 export const orderFilter = (data, sort) => {
   const newArray = data.slice()
   let orderNames= newArray.sort((a,b) => ((a.name > b.name ? 1 : -1 ))) 
@@ -24,6 +26,7 @@ export const orderFilter = (data, sort) => {
 
 };
 
+//Filtrado por orden ascendente y descendente por número
 export const orderFilterNum = (data, sortValue) => {
   const Array = data.slice()
   let orderNum = Array.sort((a,b) => ((a.num > b.num ? 1 : -1))) 
@@ -39,11 +42,15 @@ export const orderFilterNum = (data, sortValue) => {
 
 };
 
-export const typeFilter = (data, selectValue) => {
-  const tiposPokemon = data.filter(data => data.tags.includes(selectValue));
-  if (selectValue === 'all') {
-      return data;
-  } else {
-      return tiposPokemon;
-  }
+//Filtrado por generación
+export const filterByGeneration = (data, Value) => {
+  const generationPokemon = data.filter(item => item.generation.name === Value);
+  return generationPokemon;
 };
+
+//Filtrado por tipo
+export const filterByType = (data, option) => {
+  const typePokemon = data.filter(pokemon => pokemon.type.includes(option))
+  console.log(typePokemon)
+  return typePokemon;
+}
