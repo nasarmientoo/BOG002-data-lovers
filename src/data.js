@@ -14,7 +14,6 @@ export const orderFilter = (data, sort) => {
   const newArray = data.slice()
   let orderNames= newArray.sort((a,b) => ((a.name > b.name ? 1 : -1 ))) 
 
-
   if (sort === 'ascendente') {
     return orderNames;
   }
@@ -23,7 +22,6 @@ export const orderFilter = (data, sort) => {
     orderNames = orderNames.reverse()
   }
   return orderNames;
-
 };
 
 //Filtrado por orden ascendente y descendente por número
@@ -39,7 +37,6 @@ export const orderFilterNum = (data, sortValue) => {
     orderNum = orderNum.reverse()
   }
   return orderNum;
-
 };
 
 //Filtrado por generación
@@ -51,6 +48,5 @@ export const filterByGeneration = (data, Value) => {
 //Filtrado por tipo
 export const filterByType = (data, option) => {
   const typePokemon = data.filter(pokemon => pokemon.type.includes(option))
-  console.log(typePokemon)
   return typePokemon;
 }

@@ -19,8 +19,8 @@ let types = document.querySelector('#type');
 let btnTypes = document.querySelector('#btnType');
 let generations = document.querySelector('#generations');
 let btnGeneration = document.querySelector('#btnGeneration');
-let btngenerations = document.querySelector('#btngenerations');
-let btngeneration = document.querySelector('#btnGenerations');
+let btnKanto = document.querySelector('#btnKanto');
+let btnJohto = document.querySelector('#btnJohto');
 let btntype = document.querySelector('#type')
 
 btnOrder.addEventListener('click', () => ShowAndHide(ordenar));
@@ -147,6 +147,7 @@ function PokemonDetails(number) {
 input.addEventListener('keyup', (e) => {
     let searchName = e.target.value;
     let searchInfo = filterSearch (data.pokemon, searchName);
+
     
     if(searchInfo.length === 0) {
         message.innerHTML = "Sorry, please check try again";
@@ -155,32 +156,31 @@ input.addEventListener('keyup', (e) => {
     }
     AppendData(searchInfo);
     AddEvents(searchInfo);
-
 });
 
 //Filtrar de manera ascendente y descendente por nombre y número
-descendente.addEventListener('click', (e) => {
+descendente.addEventListener('click', () => {
 AppendData(orderFilter (data.pokemon, 'descendente'));
 AddEvents()
 });
 
-ascendente.addEventListener('click', (e) => {
+ascendente.addEventListener('click', () => {
 AppendData(orderFilter(data.pokemon, 'ascendente'));
 AddEvents()   
 });
 
-numDescendente.addEventListener('click', (e) => {
+numDescendente.addEventListener('click', () => {
 AppendData(orderFilterNum(data.pokemon, '251-1'));
 AddEvents()
 });
     
-numAscendente.addEventListener('click', (e) => {
+numAscendente.addEventListener('click', () => {
 AppendData(orderFilterNum(data.pokemon, '1-251'));
 AddEvents()   
 });
 
 //Filtrar por Tipo
-btntype.addEventListener('change', (e) => {
+btntype.addEventListener('change', () => {
 const value = btntype.value;
 AppendData(filterByType(data.pokemon, value))
 AddEvents()
@@ -189,25 +189,18 @@ AddEvents()
 
 
 //Filtrar por Generación
-btngenerations.addEventListener('click', () => {
-const value = btngenerations.value;
+btnKanto.addEventListener('click', () => {
+const value = btnKanto.value;
 AppendData(filterByGeneration(data.pokemon, value));
 AddEvents()
 });
 
-btngeneration.addEventListener('click', () => {
-const value = btnGenerations.value;
+btnJohto.addEventListener('click', () => {
+const value = btnJohto.value;
 AppendData(filterByGeneration(data.pokemon, value));
 AddEvents()
 });
 
-
-//Filtrar por categoria
-const select = document.getElementById('selectorTag');
-select.addEventListener('change',() => {
-    const value = select.value;
-    AppendData(typeFilter(data.pokemon,value))
-})
 
 
 //Llamar los datos con la API Fetch
@@ -220,5 +213,5 @@ fetch("./data/pokemon/pokemon.json")
         AddEvents();
     })
     .catch(function (error) {
-        console.log(error);
+        return error
     });
