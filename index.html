@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pocket</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section id="section1">
+    <img class="logo" src="images/icons/pocket-logo.png"><br>
+    <img id="pokebola1" class="pokebola1" src="images/icons/pokebola.png"><br>
+    <img id="saludo" src="./images/saludo-inicio.png">
+  </section>
+
+  <section id="section2" class="section2">
+    <div id="sidebar" class="sidebar">
+      <header>Advanced Search
+        <img id="icon-close-search" class="icon-close" src="images/icons/close-window-52.png">
+      </header>
+      <button class="dropdown-btn" id="btnOrder">&#43 Order</button>
+        <div id="order">
+        <button id="ascendente">&#45 A~Z</button>
+        <button id="descendente">&#45 Z~A</button>
+        <button id="numAscendente">&#45 1~251</button>
+        <button id="numDescendente">&#45 251~1</button>
+        </div>
+      <button class="dropdown-btn" id="btnType">&#43 Type</button>
+        <select id="type">
+          <option value="normal" class= "btnTypes">&#45 Normal</option>
+          <option value="water" class= "btnTypes">&#45 Water</option>
+          <option value="electric" class= "btnTypes">&#45 Electric</option>
+          <option value="fighting" class= "btnTypes">&#45 Fighting</option>
+          <option value="ground" class= "btnTypes">&#45 Ground</option>
+          <option value="psychic" class= "btnTypes">&#45 Psychic</option>
+          <option value="rock" class= "btnTypes">&#45 Rock</option>
+          <option value="dark" class= "btnTypes">&#45 Dark</option>
+          <option value="fire" class= "btnTypes">&#45 Fire</option>
+          <option value="grass" class= "btnTypes">&#45 Grass</option>
+          <option value="ice" class= "btnTypes">&#45 Ice</option>
+          <option value="poison" class= "btnTypes">&#45 Poison</option>
+          <option value="flying" class= "btnTypes">&#45 Flying</option>
+          <option value="bug" class= "btnTypes">&#45 Bug</option>
+          <option value="ghost" class= "btnTypes">&#45 Ghost</option>
+          <option value="fairy" class= "btnTypes">&#45 Fairy</option>
+          <option value="dragon" class= "btnTypes">&#45 Dragon</option>
+          <option value="steel" class= "btnTypes">&#45 Steel</option>
+        </select>
+        <button class="dropdown-btn" id="btnGeneration">&#43 Generation</button>
+          <div id="generations">
+          <button value="kanto" class="btnGenerations" id="btnKanto">&#45 Kanto</button>
+          <button value="johto" class="btnGenerations" id="btnJohto">&#45 Johto</button>
+          </div>
+        
+    </div>
+    <div class="top-header" id="header">
+      <img id="icon-menu" class="icon-menu" src="images/icons/menu-50.png">
+      <img class="logo" src="images/icons/pocket-logo.png">
+      <img id="icon-pokebola" class="icon-pokebola" src="images/icons/pokebola.png">
+      <div class="searching">
+        <input id="text" class="text" type="text" maxlength="15" autocomplete="off">
+        <input id="icon-lupa" class="icon-lupa" src="images/icons/lupa pokemon.png" type="image">
+
+      </div>
+      <p class="mensaje" id="mensaje"></p>
+    </div>
+    <div class="content">
+      <!--cards-->
+      <div id="pocket_Container" class="pocket_Container"></div>
+    </div>
+  </section>
+
+  <div id="pop-up" class="modal">
+    <div id="pop-up-content" class="modal-content">
+    </div>
+  </div>
+
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>

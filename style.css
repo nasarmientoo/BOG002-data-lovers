@@ -1,0 +1,488 @@
+#section1{
+    display: block;
+    text-align: center
+}
+#section2{
+    display: none;
+    text-align: center
+}
+
+#pop-up{display: none}
+#sidebar{display: none}
+#order{display: none}
+#type{display: none}
+#generations{display: none}
+
+body {
+    background-image: url(./images/background.png);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+#saludo {
+    margin: auto;
+    width: 1000px;
+}
+
+#pokebola1 {
+    margin: auto;
+    width: 450px;
+    height: 450px;
+    cursor: pointer;
+}
+
+.pokebola1:hover {
+    animation: bounce 0.5s linear;
+}
+
+@keyframes bounce {
+    20% {transform: translateY(-10px);}
+    40% {transform: translateY(1px);}
+    60% {transform: translateY(-4px);}
+    80% {transform: translateY(-1px);}
+}
+
+.sidebar{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 300px;
+    height: 100%;
+    background: white;
+    margin: 0px;    
+    border-radius: 10px;
+    border: 2px solid black;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgba(2, 2, 2, 0.664); 
+}
+
+.sidebar header{
+    font-size: 22px;
+    text-align: center;
+    line-height: 70px;
+    user-select: none;
+    font-family: 'Fira Code', monospace;
+    font-weight: bolder;
+}
+
+.dropdown-btn{
+    padding: 5px 10px 10px 20px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 90%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 30px;
+}
+
+#ascendente {
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 5px 15px 10px 20px;
+    margin: 0px 50px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 70%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;   
+}
+
+#descendente {
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 5px 15px 10px 20px;
+    margin: 0px 50px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 70%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;   
+}
+
+#numAscendente {
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 5px 15px 10px 20px;
+    margin: 0px 50px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 70%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;   
+}
+
+#numDescendente {
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 5px 15px 10px 20px;
+    margin: 0px 50px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 70%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;   
+}
+
+
+#type {
+    padding: 5px 10px 10px 20px;
+    background-color: rgb(236, 233, 233);
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 90%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 30px;  
+    margin: 0px 15px 25px;
+}
+
+.btnGenerations {
+    background-color: rgba(128, 128, 128, 0.267);
+    padding: 5px 15px 10px 20px;
+    margin: 0px 50px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    width: 70%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;  
+}
+
+.top-header{
+    top: 0;
+    height:auto;
+}
+
+.content{
+    overflow-y: scroll;
+    height: 80vh;
+}
+
+.logo {
+    margin: auto;
+    width: 300px;
+    height: 130px;
+}
+
+.searching {
+    width: 500px;
+    height: 20px;
+    border: 3px solid black;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center
+}
+
+.searching input.icon-lupa{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    outline: none;
+}
+
+.searching input.text {
+    flex: 1;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    padding-left: 10px;
+}
+
+.icon-menu {
+    float: left;
+    margin: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.icon-pokebola {
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+
+.pocket_Container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.poke-Number{
+    margin: auto;
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+}
+
+.clasifics {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 3px;
+    box-sizing: border-box;
+    margin: 10px;
+    height: 50px;
+    width: 330px;
+}
+
+.generation {
+    float: left;
+    padding-left: 50px;
+    font-size: 15px;
+    margin: -5px auto;
+    font-family: 'Fira Code', monospace;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.poke-rarity {
+    float: left;
+    padding-left: 50px;
+    font-size: 15px;
+    margin: -1px auto;
+    font-family: 'Fira Code', monospace;
+}
+
+.icon-generation {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-rarity {
+    width: 20px;
+    height: 20px;
+}
+
+.pokemon-type {
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgba(188, 141, 250, 0.671);
+    border-radius: 20px;
+    margin: 1px auto;
+    width: 135px;
+    height: 28px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 17px;
+}
+
+.card {
+    padding: 10px;
+    margin: 30px 10px;
+    text-align: center;
+    width: 375px;
+    height: 525px;
+    background: #ffffff;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.card:hover {
+    animation: bounce 0.5s linear;
+}
+
+@keyframes bounce {
+    20% {transform: translateY(-10px);}
+    40% {transform: translateY(1px);}
+    60% {transform: translateY(-4px);}
+    80% {transform: translateY(-1px);}
+}
+
+.border-small {
+    height: 500px;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+.description {
+    padding: 5px;
+    margin: auto;
+    width: 330px;
+    height: 160px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    margin: 12px auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 15px;
+}
+
+.poke-name {
+    background-color: rgb(211, 211, 202);
+    margin: 1px auto;
+    height: 24px;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+}
+
+.img-container {
+    margin-top: 2px;
+    height: 150px;
+    width: 150px;
+}
+
+.modal{
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    top: 0;
+    position: absolute;
+}
+
+.modal-content{
+    width: 700px;
+    height: 450px;
+    position: absolute;
+    background-color: white;
+    border-radius: 7px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+}
+
+.icon-close{
+    cursor: pointer;
+    float: right;
+}
+
+.popup-content {
+    height: 430px;
+    width: 680px;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    margin: 8px;
+    font-family: 'Fira Code', monospace;
+}
+
+.popup-num {
+    margin: auto;
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+}
+
+.img-popup {
+    width: 180px;
+    height: 180px;
+    margin: 0px 30px;
+}
+
+.banner {
+    margin: -210px 0px;
+    width: 680px;
+    height: 115px;
+    border-radius: 7px;
+}
+
+.general {
+    margin: 2px 8px;
+    color: white;
+    background-color: #67B9D3;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 210px;
+    height: 74px;
+    font-size: 15px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.attack {
+    float: right;
+    background-color: rgb(202, 180, 209);
+    text-align: center;
+    height: 120px;
+    width: 170px;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    margin: -140px 260px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.quick {
+    background-color: rgb(202, 188, 253);
+    float: right;
+    text-align: center;
+    height: 120px;
+    width: 170px;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    margin: -140px 55px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.especifics {
+    background-color: rgba(208, 196, 214, 0.473);
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 100px;
+    width: 375px;
+    margin: -105px 245px;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.icon-close {
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 580px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-header {
+        height: 50%;
+        width: 50%;
+        margin: 20px 0;
+    }
+
+    .icon-pokebola {
+        position: static;
+
+    }
+}
