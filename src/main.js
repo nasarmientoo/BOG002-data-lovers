@@ -150,7 +150,7 @@ input.addEventListener('keyup', (e) => {
 
     
     if(searchInfo.length === 0) {
-        message.innerHTML = "Sorry, please check try again";
+        message.innerHTML = `<div> <img src="images/pikachu-mensaje.gif"></div> Sorry, please check and try again`;
     } else {
         message.innerHTML = " ";
     }
