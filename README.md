@@ -15,7 +15,9 @@ hacerlo es creando _interfaces_ y _visualizaciones_.
 ## 2. Resumen del proyecto
 
 En este proyecto se construyó un página web para visualizar un
-set de datos de Pokemones, que se adecúe a lo que los pokefans necesitan
+set de datos de Pokemones, que se adecúe a lo que los pokefans necesitan 
+facilitando a los jugadore regulares de Pokemon Go una interfaz que les permita 
+filtrar el conjunto de datos que les interese 
 
 Estos son los datos seleccionados:
 
@@ -84,24 +86,31 @@ usuario necesita.
 
 Los criterios para considerar que has completado este proyecto son:
 
-### Definición del producto
+### Definición del problema
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
+Los pokefans no tienen una interfaz de acceso y filtrado flexible, por lo tanto,
+buscan desarrolladores con nuevas ideas de diseño gamming y funcionalidad óptima,
+además quieren poder acceder a la plataforma desde cualquier dispositivo móvil
 
 ### Historias de usuario
 
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
+#### Historia de usuario 1:
+Los pokefans necesitan ideas de una interfaz para acceder a los datos de los pokemones 
 
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
+#### Historia de usuario 2:
 
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
+
+#### Historia de usuario 3:
+
+
+#### Historia de usuario 4:
+
+
+#### Historia de usuario 5:
+
+
+#### Historia de usuario 6:
+
 
 ### Diseño de la Interfaz de Usuario
 
