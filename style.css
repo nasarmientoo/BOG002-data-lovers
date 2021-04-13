@@ -488,7 +488,7 @@ body {
     
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 360px) {
     .top-header {
         height: 100%;
         width: 100%;
