@@ -82,7 +82,7 @@ usuario necesita.
 * [x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
 * [x] Planear y ejecutar tests de usabilidad.
 
-## 5. Criterios de aceptación mínimos del proyecto
+## 4. Criterios de aceptación mínimos del proyecto
 
 Los criterios para considerar que has completado este proyecto son:
 
@@ -148,7 +148,7 @@ Los pokefans quieren testear el código para verificar su funcionamiento
 https://www.figma.com/file/bprFyeCjv0yxxXwuAwCJXg/DL_Pocket?node-id=0%3A1
 
 
-## 6. Hacker edition
+## 5. Hacker edition
 
 Features/características extra sugeridas:
 
@@ -162,7 +162,7 @@ Features/características extra sugeridas:
   o [Google Charts](https://developers.google.com/chart/).
 * [x] 100% Coverage
 
-## 9. Checklist
+## 6. Checklist
 
 * [x] Usa VanillaJS.
 * [x] No hace uso de `this`.
