@@ -1,4 +1,4 @@
-#Proyecto Pocket.
+# Proyecto Pocket. Common Core: Data lovers
 
 ## 1. Preámbulo
 
