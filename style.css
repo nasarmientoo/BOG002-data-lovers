@@ -463,22 +463,35 @@ body {
     font-family: 'Varela Round', sans-serif;
 }
 
+.mensaje {
+    font-size: 50px;
+    font-family: 'Varela Round', sans-serif;   
+}
+
 .icon-close {
     height: 30px;
     width: 30px;
     margin: 10px;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 600px) {
     .card {
         display: flex;
         flex-direction: column;
     }
 
+    #section1 {
+        height: 100%;
+        width: 100%;
+    }
+
+    
+}
+
+@media screen and (max-width: 300px) {
     .top-header {
-        height: 50%;
-        width: 50%;
-        margin: 20px 0;
+        height: 100%;
+        width: 100%;
     }
 
     .icon-pokebola {
