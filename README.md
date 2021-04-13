@@ -97,8 +97,8 @@ además quieren poder acceder a la plataforma desde cualquier dispositivo móvil
 #### Historia de usuario 1:
 Los pokefans necesitan ideas de una interfaz para acceder a los datos de los pokemones 
 ##### Criterios de acepactión 
-[x] Maquetación general de idea de interfaz
-[x] Diseño gaming de visualización de datos 
+* [x] Maquetación general de idea de interfaz
+* [x] Diseño gaming de visualización de datos 
 
 #### Historia de usuario 2:
 Los pokefans quieren visualizar los datos generales de los pokemones para poder identificarlos
