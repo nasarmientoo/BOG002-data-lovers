@@ -96,21 +96,46 @@ además quieren poder acceder a la plataforma desde cualquier dispositivo móvil
 
 #### Historia de usuario 1:
 Los pokefans necesitan ideas de una interfaz para acceder a los datos de los pokemones 
+##### Criterios de acepactión 
+[x] Maquetación general de idea de interfaz
+[x] Diseño gaming de visualización de datos 
 
 #### Historia de usuario 2:
-
+Los pokefans quieren visualizar los datos generales de los pokemones para poder identificarlos
+##### Criterios de acepactión 
+[x] Deben visualizar la fotografía del pokemon 
+[x] Saber la rareza del pokemon 
+[x] Saber el tipo de pokemon
+[x] A qué generación pertenece el pokemon
+[x] Descripción general
+[x] Interfaz tipo cartas
 
 #### Historia de usuario 3:
-
+Los pokefans necesitan ver la información detallada de cada pokemon para saber sus características en batalla
+##### Criterios de acepactión 
+[x] Sección alterna al hacer click a la tarjeta
+[x] Características generales del pokemon
+[x] Imagen del pokemon 
 
 #### Historia de usuario 4:
-
+Los pokefans quieren filtrar la información para acceder más rápido a ciertos pokemones
+##### Criterios de acepactión 
+[x] Barra de búsqueda con click de search y estática
+[x] Panel de filtrado como barra lateral que se pueda ocultar 
+[x] Categorías de filtrado 
 
 #### Historia de usuario 5:
-
+El usuario quiere ver la aplicación en su celular y tablet para acceder a la app en cualquier lugar
+##### Criterios de acepactión 
+[x] La aplicación es responsive para cualquier dispositivo
 
 #### Historia de usuario 6:
-
+Los pokefans quieren testear el código para verificar su funcionamiento
+##### Criterios de acepactión
+[x] Testeo unitario
+[x] Verificación de código con el testeo
+[x] Eslint
+[x] Nomenclatura y semántica correcta
 
 ### Diseño de la Interfaz de Usuario
 
