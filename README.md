@@ -141,10 +141,7 @@ Los pokefans quieren testear el código para verificar su funcionamiento
 
 #### Prototipo de baja fidelidad
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
+![Prototipo de baja fidelidad](https://user-images.githubusercontent.com/72315710/114480342-0552a980-9bc8-11eb-949f-9b9ca3a967f9.png)
 
 #### Prototipo de alta fidelidad
 
